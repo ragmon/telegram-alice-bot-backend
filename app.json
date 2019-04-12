@@ -1,0 +1,19 @@
+{
+  "name": "Telegram Chatbot Alice",
+  "description": "A sample Telegram ChatBot Alice backend Node.js app using Express 4",
+  "repository": "https://github.com/ragmon/telegram-alice-bot-backend",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "telegram",
+    "chatbot",
+    "chat",
+    "bot",
+    "alice",
+    "backend",
+    "example"
+  ],
+  "image": "heroku/nodejs"
+}
