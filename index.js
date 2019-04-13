@@ -20,7 +20,7 @@ app.use('/', router);
 
 bot.telegram.setWebhook(APP_URL + TELEGRAM_WEBHOOK_URI);
 
-bot.on('message', (ctx) => {
+bot.on('text', (ctx) => {
     ctx.reply('hello world');
 });
 
