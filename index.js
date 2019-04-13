@@ -15,7 +15,7 @@ const bot = new Telegraf(BOT_TOKEN);
 router.get('/', (req, res) => res.sendFile(path.join(__dirname + '/views/pages/index.html')));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bot.webhookCallback(TELEGRAM_WEBHOOK_URI));
+app.use(bot.webhookCallback(APP_URL + TELEGRAM_WEBHOOK_URI));
 app.use('/', router);
 
 bot.telegram.setWebhook(APP_URL + TELEGRAM_WEBHOOK_URI);
