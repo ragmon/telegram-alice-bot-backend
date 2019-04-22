@@ -23,7 +23,7 @@ const alice = {
             console.debug('prepared request data', data);
 
             //alice.ENTRYPOINT, data
-            alice._client.post(data)
+            alice._client.post(alice.ENTRYPOINT, data)
                 .then((response) => {
                     console.debug('response from Alice API', response);
 
@@ -50,14 +50,12 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        const query = JSON.stringify({
-            ask : message,
-            userid : 'example'
+        return qs.stringify({
+            query : {
+                ask : 'привет',
+                userid : 'example'
+            }
         });
-
-        const params = new URLSearchParams();
-        params.append('query', query);
-        return params;
         // return {
         //     'query' : qs.stringify({
         //         ask : message,
