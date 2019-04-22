@@ -55,7 +55,7 @@ const alice = {
                 ask : 'привет',
                 userid : 'example'
             }
-        });
+        }, { encodeValuesOnly: true });
         // return {
         //     'query' : qs.stringify({
         //         ask : message,
