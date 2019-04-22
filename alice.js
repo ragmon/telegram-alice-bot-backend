@@ -19,6 +19,8 @@ const alice = {
         return new Promise((resolve, reject) => {
             alice._client.post(alice.ENTRYPOINT, alice._getRequestData(text))
                 .then((response) => {
+                    console.debug('response from Alice API', response);
+
                     if (response.data.status) {
                         resolve(response.data.aiml, response.data.emotion);
                     } else {
@@ -27,7 +29,7 @@ const alice = {
                         reject(response.data.description);
                     }
                 }).catch((error) => {
-                    console.debug(error);
+                    console.error(error);
 
                     reject('Упс... Не удалось связаться с Алисой :(');
                 });
