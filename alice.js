@@ -36,13 +36,15 @@ const alice = {
      * Prepare post request data.
      *
      * @param message
-     * @returns {{ask: *, userid: string}}
+     * @returns {{query: {ask: *, userid: string}}}
      * @private
      */
     _getRequestData(message) {
         return {
-            ask : message,
-            userid : 'example'
+            query : {
+                ask : message,
+                userid : 'example'
+            }
         };
     }
 };
