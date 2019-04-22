@@ -1,4 +1,4 @@
-const qs = require('querystring');
+const qs = require('qs');
 
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api/',
