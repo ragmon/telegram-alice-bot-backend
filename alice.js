@@ -49,12 +49,12 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return qs.stringify({
-            'query' : JSON.stringify({
+        return {
+            'query' : qs.stringify(JSON.stringify({
                 ask : message,
                 userid : 'example'
-            })
-        });
+            }))
+        };
     }
 };
 
