@@ -45,10 +45,10 @@ const alice = {
      */
     _getRequestData(message) {
         return qs.stringify({
-            query : {
+            query : JSON.stringify({
                 ask : message,
                 userid : 'example'
-            }
+            })
         });
     }
 };
