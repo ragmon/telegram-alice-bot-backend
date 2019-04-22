@@ -13,7 +13,7 @@ const bot = {
         bot._alice = alice;
         bot._bot = new Telegraf(token);
 
-        bot.catch(bot.onError);
+        // bot.catch(bot.onError);
 
         bot.start(bot.onStart);
         bot.help(bot.onHelp);
