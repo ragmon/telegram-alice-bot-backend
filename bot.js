@@ -1,4 +1,5 @@
 const Telegraf = require('telegraf');
+const extra = require('telegraf/extra')
 
 const bot = {
     _bot : null,
@@ -47,15 +48,14 @@ const bot = {
     onText(ctx) {
         bot._alice.sendMessage(ctx.message)
             .then((answer, emotion) => {
-                ctx.reply(answer);
-                ctx.reply(bot._parseEmotion(emotion));
+                ctx.reply(answer + bot._parseEmotion(emotion), extra.markdown());
+                ctx.reply();
             })
-            .catch((error) => ctx.reply(`\`**Ошибка:** ${error}\``))
+            .catch((error) => ctx.reply(`**Ошибка:** \`${error}\``, extra.markdown()))
     },
 
     _parseEmotion(emotion) {
-        if (emotion in bot._emotions)
-            return bot._emotions[emotion];
+        return emotion in bot._emotions ? bot._emotions[emotion] : '';
     }
 
 };
