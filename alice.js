@@ -50,12 +50,20 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return qs.stringify({
-            query : {
-                ask : 'привет',
-                userid : 'example'
+        return {
+            query : ```
+            {
+                "ask" : "привет",
+                "userid" : "example"
             }
-        }, { encodeValuesOnly: true });
+            ```
+        };
+        // return qs.stringify({
+        //     query : {
+        //         ask : 'привет',
+        //         userid : 'example'
+        //     }
+        // }, { encodeValuesOnly: true });
         // return {
         //     'query' : qs.stringify({
         //         ask : message,
