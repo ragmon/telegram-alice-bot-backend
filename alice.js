@@ -28,6 +28,8 @@ const alice = {
                     console.debug('response from Alice API', response);
 
                     if (response.data.status) {
+                        console.debug('response from bot', response.data);
+
                         resolve(response.data.aiml, response.data.emotion);
                     } else {
                         console.debug(response.data.description);
