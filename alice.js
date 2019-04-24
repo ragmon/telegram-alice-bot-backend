@@ -1,5 +1,5 @@
-const qs = require('qs');
-// const qs = require('querystring');
+// const qs = require('qs');
+const qs = require('querystring');
 
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api',
@@ -51,13 +51,13 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return {
+        return qs.stringify({
             // 'query' : qs.stringify('{"ask":"как дела?","userid":"example"}')
-            'query' : {
+            'query' : ```{
                 'ask' : 'привет',
                 'userid' : 'example'
-            }
-        };
+            }```
+        });
         // return qs.stringify({
         //     query : {
         //         ask : 'привет',
