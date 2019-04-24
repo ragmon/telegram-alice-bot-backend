@@ -22,16 +22,7 @@ const alice = {
 
             console.debug('prepared request data', data);
 
-            //alice.ENTRYPOINT, data
-            // alice._client.post(alice.ENTRYPOINT, data, {
-            //     headers: { 'content-type': 'application/x-www-form-urlencoded' }
-            // })
-            alice._client({
-                method: 'POST',
-                headers: { 'content-type': 'application/x-www-form-urlencoded' },
-                data: qs.stringify(data),
-                url: alice.ENTRYPOINT,
-            })
+            alice._client.post(alice.ENTRYPOINT, data)
                 .then((response) => {
                     console.debug('response from Alice API', response);
 
@@ -60,9 +51,9 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return {
+        return qs.stringify({
             'query' : '{"ask":"как дела?","userid":"example"}'
-        };
+        });
         // return qs.stringify({
         //     query : {
         //         ask : 'привет',
