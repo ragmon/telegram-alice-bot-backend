@@ -1,5 +1,5 @@
-// const qs = require('qs');
-const qs = require('querystring');
+const qs = require('qs');
+// const qs = require('querystring');
 
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api/',
@@ -28,11 +28,11 @@ const alice = {
                     // console.debug('response from Alice API', response);
 
                     if (response.data.status) {
-                        // console.debug('response from bot', response.data);
+                        console.debug('response from bot', response.data);
 
                         resolve(response.data.aiml, response.data.emotion);
                     } else {
-                        // console.debug(response.data.description);
+                        console.debug(response.data.description);
 
                         reject(response.data.description);
                     }
@@ -56,7 +56,8 @@ const alice = {
         return qs.stringify({
             'query' : JSON.stringify({
                 'ask' : message,
-                'userid' : userId
+                'userid' : userId,
+                'key': ''
             })
         });
     }
