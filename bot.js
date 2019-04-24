@@ -51,7 +51,6 @@ const bot = {
         bot._alice.sendMessage(ctx.message.from.username, ctx.message.text)
             .then((answer, emotion) => {
                 ctx.reply(answer + bot._parseEmotion(emotion), extra.markdown());
-                ctx.reply();
             })
             .catch((error) => ctx.reply(`**Ошибка:** \`${error}\``, extra.markdown()))
     },
