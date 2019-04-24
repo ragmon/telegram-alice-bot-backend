@@ -51,9 +51,9 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return qs.stringify({
-            'query' : '{"ask":"как дела?","userid":"example"}'
-        });
+        return {
+            'query' : qs.stringify('{"ask":"как дела?","userid":"example"}')
+        };
         // return qs.stringify({
         //     query : {
         //         ask : 'привет',
