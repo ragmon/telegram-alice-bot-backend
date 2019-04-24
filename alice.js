@@ -2,7 +2,7 @@
 const qs = require('querystring');
 
 const alice = {
-    ENTRYPOINT : 'http://aiproject.ru/api',
+    ENTRYPOINT : 'http://aiproject.ru/api/',
     _client : null,
 
     initialize(client) {
