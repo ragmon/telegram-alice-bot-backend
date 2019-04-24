@@ -52,7 +52,11 @@ const alice = {
      */
     _getRequestData(message) {
         return {
-            'query' : qs.stringify('{"ask":"как дела?","userid":"example"}')
+            // 'query' : qs.stringify('{"ask":"как дела?","userid":"example"}')
+            'query' : {
+                'ask' : 'привет',
+                'userid' : 'example'
+            }
         };
         // return qs.stringify({
         //     query : {
