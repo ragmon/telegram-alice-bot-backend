@@ -6,8 +6,8 @@ const bot = {
     _alice : null,
 
     _emotions : {
-        'smile' : '',
-        'talk' : ''
+        'smile' : ':slightly_smiling_face:',
+        'talk' : ':smirk:'
     },
 
     initialize(token, alice) {
@@ -46,11 +46,11 @@ const bot = {
     },
 
     onText(ctx) {
-        console.debug('received message from telegram bot', ctx.message.from.username, ctx.message.text);
+        console.debug('received message from telegram bot', ctx.message.from.id, ctx.message.text);
 
-        bot._alice.sendMessage(ctx.message.text, ctx.message.from.username)
+        bot._alice.sendMessage(ctx.message.text, ctx.message.from.id)
             .then((answer, emotion) => {
-                ctx.reply(answer + bot._parseEmotion(emotion), extra.markdown());
+                ctx.reply(`${answer} ${bot._parseEmotion(emotion)}`, extra.markdown());
             })
             .catch((error) => ctx.reply(`**Ошибка:** \`${error}\``, extra.markdown()))
     },
