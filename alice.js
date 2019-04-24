@@ -4,9 +4,22 @@ const qs = require('qs');
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api',
     _client : null,
+    _debug : true,
 
     initialize(client) {
         alice._client = client;
+
+        if (alice._debug) {
+            alice._client.interceptors.request.use(request => {
+                console.log('Starting Request', request)
+                return request
+            })
+
+            alice._client.interceptors.response.use(response => {
+                console.log('Response:', response)
+                return response
+            })
+        }
 
         return alice;
     },
