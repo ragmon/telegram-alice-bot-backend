@@ -1,5 +1,5 @@
-const qs = require('qs');
-// const qs = require('querystring');
+// const qs = require('qs');
+const qs = require('querystring');
 
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api',
@@ -8,18 +8,6 @@ const alice = {
 
     initialize(client) {
         alice._client = client;
-
-        if (alice._debug) {
-            alice._client.interceptors.request.use(request => {
-                console.log('Starting Request', request)
-                return request
-            })
-
-            alice._client.interceptors.response.use(response => {
-                console.log('Response:', response)
-                return response
-            })
-        }
 
         return alice;
     },
@@ -65,9 +53,9 @@ const alice = {
      * @private
      */
     _getRequestData(message) {
-        return {
-            query : '{"ask":"как дела?","userid":"example"}'
-        };
+        return qs.stringify({
+            'query' : '{"ask":"как дела?","userid":"example"}'
+        });
         // return qs.stringify({
         //     query : {
         //         ask : 'привет',
