@@ -2,7 +2,7 @@ const qs = require('qs');
 // const qs = require('querystring');
 
 const alice = {
-    ENTRYPOINT : 'http://aiproject.ru/api/',
+    ENTRYPOINT : 'http://aiproject.ru/api',
     _client : null,
 
     initialize(client) {
@@ -53,7 +53,7 @@ const alice = {
      */
     _getRequestData(message) {
         return {
-            query : '{"ask" : "привет","userid" : "example"}'
+            query : '{"ask":"как дела?","userid":"example"}'
         };
         // return qs.stringify({
         //     query : {
