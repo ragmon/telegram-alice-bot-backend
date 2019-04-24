@@ -4,7 +4,6 @@ const qs = require('qs');
 const alice = {
     ENTRYPOINT : 'http://aiproject.ru/api',
     _client : null,
-    _debug : true,
 
     initialize(client) {
         alice._client = client;
@@ -24,7 +23,9 @@ const alice = {
             console.debug('prepared request data', data);
 
             //alice.ENTRYPOINT, data
-            alice._client.post(alice.ENTRYPOINT, data)
+            alice._client.post(alice.ENTRYPOINT, data, {
+                headers: { 'content-type': 'application/x-www-form-urlencoded' }
+            })
                 .then((response) => {
                     console.debug('response from Alice API', response);
 
