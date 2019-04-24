@@ -46,7 +46,7 @@ const bot = {
     },
 
     onText(ctx) {
-        console.debug('received message from telegram bot', ctx.chat.text, ctx.chat.username);
+        console.debug('received message from telegram bot', ctx.message);
 
         bot._alice.sendMessage(ctx.chat.text, ctx.chat.username)
             .then((answer, emotion) => {
