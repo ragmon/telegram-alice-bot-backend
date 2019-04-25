@@ -2,11 +2,11 @@
 
 This example demonstrate how to integrate telegram bot to the third-party online service by API.
 
-Home page: https://ragmon-chatbot-alice.herokuapp.com/
+**Home page:** https://ragmon-chatbot-alice.herokuapp.com/
 
-Telegram bot link: [@ragmon_alice_bot](https://t.me/ragmon_alice_bot)
+**Telegram bot link:** [@ragmon_alice_bot](https://t.me/ragmon_alice_bot)
 
-Third-party API: http://aiproject.ru/?api
+**Third-party API:** http://aiproject.ru/?api
 
 > **NOTICE:** The telegram bot can temporarily suspend (heroku cloud free account dyno limitation).
 If telegram bot not working - open home page in your browser it's makes heroku application to restart.
