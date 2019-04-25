@@ -42,6 +42,20 @@ With npm
 npm install
 ```
 
+### Running
+
+With yarn
+
+```
+yarn run start
+```
+
+With npm
+
+```
+npm run start
+```
+
 ## Deployment
 
 To deploy this application to the heroku cloud you must login to your heroku account and setup you deployment method.
